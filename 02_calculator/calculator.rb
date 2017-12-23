@@ -15,3 +15,12 @@ def sum(array)
 	y
 end
 
+def multiply(m1,m2)
+	m1*m2
+end
+
+def power(p1, p2)
+	p1**p2
+end
+
+
