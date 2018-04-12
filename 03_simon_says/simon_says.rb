@@ -23,4 +23,25 @@ def first_word (str)
 	str.split().first
 end
 
+def titleize (str)
+	array=str.split
+	array2=[]
+
+	for word in array
+		if word==array[0] or word==array[array.length-1]
+			array2.push(word.capitalize!)   #Why do I need an exclamation pt here for code to work?
+		elsif ['and', 'over', 'the', 'but', 'if', 'is', 'taco'].include? word
+			array2.push(word)
+		else
+			array2.push(word.capitalize)
+		end
+	end
+
+	return array2.join(" ")
+
+end
+
+
+
+
 
