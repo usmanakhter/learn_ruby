@@ -23,18 +23,25 @@ def first_word (str)
 	str.split().first
 end
 
-def titleize (str)
+def titleize (str) #this code does not downcase improperly uppercased words
 	array=str.split
 	array2=[]
+	array2.push(array.first.capitalize!)
 
-	for word in array
-		if word==array[0] or word==array[array.length-1]
-			array2.push(word.capitalize!)   #Why do I need an exclamation pt here for code to work?
-		elsif ['and', 'over', 'the', 'but', 'if', 'is', 'taco'].include? word
-			array2.push(word)
+	i=1
+	while i<array.length-1
+		if ['and', 'over', 'the', 'but', 'if', 'is', 'taco'].include? array[i]
+			array2.push(array[i])
+			i+=1
 		else
-			array2.push(word.capitalize)
+			array2.push(array[i].capitalize)
+			i+=1
 		end
+	end
+
+	if array.length>1
+		array2.insert(array.length-1, array.last.capitalize) #always caps last word of movie title
+	else
 	end
 
 	return array2.join(" ")
