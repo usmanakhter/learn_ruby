@@ -23,15 +23,15 @@ def first_word (str)
 	str.split().first
 end
 
-def titleize (str) #this code does not downcase improperly uppercased words
+def titleize (str) #
 	array=str.split
 	array2=[]
 	array2.push(array.first.capitalize!)
 
 	i=1
 	while i<array.length-1
-		if ['and', 'over', 'the', 'but', 'if', 'is', 'taco'].include? array[i]
-			array2.push(array[i])
+		if ['and', 'over', 'the', 'but', 'if', 'is', 'taco'].include? array[i].downcase
+			array2.push(array[i].downcase) #don't capitalize these words. specifically, downcase these words
 			i+=1
 		else
 			array2.push(array[i].capitalize)
